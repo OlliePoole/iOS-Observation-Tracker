@@ -7,14 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B1550F61BF5EF9E00CF50FB /* OTUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1550F51BF5EF9E00CF50FB /* OTUserManager.swift */; };
+		6B1550F81BF5F1B700CF50FB /* OTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1550F71BF5F1B700CF50FB /* OTUser.swift */; };
+		6B1DE6E11BE65FF1000ED18F /* OTMakeObservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1DE6E01BE65FF1000ED18F /* OTMakeObservationViewController.swift */; };
+		6B1DE6E61BE66018000ED18F /* OTSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1DE6E51BE66018000ED18F /* OTSignUpViewController.swift */; };
+		6BA90A541BE68D0F001D8125 /* OTMakeObservationFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA90A531BE68D0F001D8125 /* OTMakeObservationFormTableViewController.swift */; };
+		6BD85CA51BE5477800C26C9F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD85CA41BE5477800C26C9F /* MapKit.framework */; };
+		6BD85CAB1BE54BDB00C26C9F /* OTViewObservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD85CAA1BE54BDB00C26C9F /* OTViewObservationViewController.swift */; };
+		6BD85CAD1BE54BF400C26C9F /* OTViewObservationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD85CAC1BE54BF400C26C9F /* OTViewObservationsTableViewController.swift */; };
+		6BD85CAF1BE54C0700C26C9F /* OTViewObservationMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD85CAE1BE54C0700C26C9F /* OTViewObservationMapViewController.swift */; };
+		6BD85CB11BE54C3800C26C9F /* OTRefineSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD85CB01BE54C3800C26C9F /* OTRefineSearchViewController.swift */; };
 		6BF1E3031BE53CC600FA5D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF1E3021BE53CC600FA5D15 /* AppDelegate.swift */; };
 		6BF1E3081BE53CC600FA5D15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF1E3061BE53CC600FA5D15 /* Main.storyboard */; };
 		6BF1E30D1BE53CC600FA5D15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BF1E30C1BE53CC600FA5D15 /* Assets.xcassets */; };
 		6BF1E3101BE53CC600FA5D15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF1E30E1BE53CC600FA5D15 /* LaunchScreen.storyboard */; };
 		6BF1E31F1BE53E3B00FA5D15 /* ObservationTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BF1E31D1BE53E3B00FA5D15 /* ObservationTracker.xcdatamodeld */; };
+		6BF1E3221BE544D600FA5D15 /* OTNetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF1E3211BE544D600FA5D15 /* OTNetworkInterface.swift */; };
+		6BF44D251BF8C3A60030FE32 /* OTWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF44D241BF8C3A60030FE32 /* OTWelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B1550F51BF5EF9E00CF50FB /* OTUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTUserManager.swift; sourceTree = "<group>"; };
+		6B1550F71BF5F1B700CF50FB /* OTUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTUser.swift; sourceTree = "<group>"; };
+		6B1DE6E01BE65FF1000ED18F /* OTMakeObservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTMakeObservationViewController.swift; sourceTree = "<group>"; };
+		6B1DE6E51BE66018000ED18F /* OTSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTSignUpViewController.swift; sourceTree = "<group>"; };
+		6BA90A531BE68D0F001D8125 /* OTMakeObservationFormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTMakeObservationFormTableViewController.swift; sourceTree = "<group>"; };
+		6BD85CA41BE5477800C26C9F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6BD85CAA1BE54BDB00C26C9F /* OTViewObservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTViewObservationViewController.swift; sourceTree = "<group>"; };
+		6BD85CAC1BE54BF400C26C9F /* OTViewObservationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTViewObservationsTableViewController.swift; sourceTree = "<group>"; };
+		6BD85CAE1BE54C0700C26C9F /* OTViewObservationMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTViewObservationMapViewController.swift; sourceTree = "<group>"; };
+		6BD85CB01BE54C3800C26C9F /* OTRefineSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTRefineSearchViewController.swift; sourceTree = "<group>"; };
 		6BF1E2FF1BE53CC600FA5D15 /* ObservationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObservationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF1E3021BE53CC600FA5D15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BF1E3071BE53CC600FA5D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -22,6 +44,8 @@
 		6BF1E30F1BE53CC600FA5D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BF1E3111BE53CC600FA5D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BF1E31E1BE53E3B00FA5D15 /* ObservationTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ObservationTracker.xcdatamodel; sourceTree = "<group>"; };
+		6BF1E3211BE544D600FA5D15 /* OTNetworkInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTNetworkInterface.swift; sourceTree = "<group>"; };
+		6BF44D241BF8C3A60030FE32 /* OTWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTWelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,12 +53,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BD85CA51BE5477800C26C9F /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B1DE6E21BE65FF7000ED18F /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				6BF44D241BF8C3A60030FE32 /* OTWelcomeViewController.swift */,
+				6B1DE6E51BE66018000ED18F /* OTSignUpViewController.swift */,
+			);
+			path = "Sign Up";
+			sourceTree = "<group>";
+		};
+		6BD85CA61BE54BA300C26C9F /* View Observations */ = {
+			isa = PBXGroup;
+			children = (
+				6BD85CAA1BE54BDB00C26C9F /* OTViewObservationViewController.swift */,
+				6BD85CAC1BE54BF400C26C9F /* OTViewObservationsTableViewController.swift */,
+				6BD85CAE1BE54C0700C26C9F /* OTViewObservationMapViewController.swift */,
+				6BD85CB01BE54C3800C26C9F /* OTRefineSearchViewController.swift */,
+			);
+			path = "View Observations";
+			sourceTree = "<group>";
+		};
+		6BD85CA71BE54BAB00C26C9F /* Make Observation */ = {
+			isa = PBXGroup;
+			children = (
+				6B1DE6E01BE65FF1000ED18F /* OTMakeObservationViewController.swift */,
+				6BA90A531BE68D0F001D8125 /* OTMakeObservationFormTableViewController.swift */,
+			);
+			path = "Make Observation";
+			sourceTree = "<group>";
+		};
 		6BF1E2F61BE53CC600FA5D15 = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +111,7 @@
 				6BF1E3171BE53D2500FA5D15 /* Controllers */,
 				6BF1E3181BE53D2D00FA5D15 /* Views */,
 				6BF1E3191BE53D3100FA5D15 /* Models */,
+				6BF1E3201BE544C000FA5D15 /* Utils */,
 				6BF1E31A1BE53D3700FA5D15 /* Resources */,
 				6BF1E31B1BE53D4300FA5D15 /* Supporting Files */,
 			);
@@ -66,6 +121,9 @@
 		6BF1E3171BE53D2500FA5D15 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6B1DE6E21BE65FF7000ED18F /* Sign Up */,
+				6BD85CA71BE54BAB00C26C9F /* Make Observation */,
+				6BD85CA61BE54BA300C26C9F /* View Observations */,
 				6BF1E31C1BE53D5E00FA5D15 /* Base.iproj */,
 				6BF1E3061BE53CC600FA5D15 /* Main.storyboard */,
 				6BF1E30E1BE53CC600FA5D15 /* LaunchScreen.storyboard */,
@@ -84,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				6BF1E31D1BE53E3B00FA5D15 /* ObservationTracker.xcdatamodeld */,
+				6B1550F71BF5F1B700CF50FB /* OTUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -91,6 +150,7 @@
 		6BF1E31A1BE53D3700FA5D15 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6BD85CA41BE5477800C26C9F /* MapKit.framework */,
 				6BF1E30C1BE53CC600FA5D15 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -111,6 +171,15 @@
 			);
 			name = Base.iproj;
 			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		6BF1E3201BE544C000FA5D15 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6B1550F51BF5EF9E00CF50FB /* OTUserManager.swift */,
+				6BF1E3211BE544D600FA5D15 /* OTNetworkInterface.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +208,7 @@
 		6BF1E2F71BE53CC600FA5D15 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = OT;
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = OliverPoole;
@@ -185,7 +255,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BF1E3031BE53CC600FA5D15 /* AppDelegate.swift in Sources */,
+				6BD85CAB1BE54BDB00C26C9F /* OTViewObservationViewController.swift in Sources */,
+				6BD85CAD1BE54BF400C26C9F /* OTViewObservationsTableViewController.swift in Sources */,
 				6BF1E31F1BE53E3B00FA5D15 /* ObservationTracker.xcdatamodeld in Sources */,
+				6B1DE6E11BE65FF1000ED18F /* OTMakeObservationViewController.swift in Sources */,
+				6BA90A541BE68D0F001D8125 /* OTMakeObservationFormTableViewController.swift in Sources */,
+				6BD85CB11BE54C3800C26C9F /* OTRefineSearchViewController.swift in Sources */,
+				6BD85CAF1BE54C0700C26C9F /* OTViewObservationMapViewController.swift in Sources */,
+				6BF1E3221BE544D600FA5D15 /* OTNetworkInterface.swift in Sources */,
+				6B1550F81BF5F1B700CF50FB /* OTUser.swift in Sources */,
+				6BF44D251BF8C3A60030FE32 /* OTWelcomeViewController.swift in Sources */,
+				6B1550F61BF5EF9E00CF50FB /* OTUserManager.swift in Sources */,
+				6B1DE6E61BE66018000ED18F /* OTSignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +418,7 @@
 				6BF1E3161BE53CC600FA5D15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
