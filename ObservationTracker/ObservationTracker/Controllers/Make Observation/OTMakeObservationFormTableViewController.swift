@@ -8,20 +8,28 @@
 
 import UIKit
 
-protocol OTMakeObservationFormProtocol {
-    func shouldShowForm()
-}
 
 class OTMakeObservationFormTableViewController: UITableViewController {
-
-    var delegate : OTMakeObservationFormProtocol!
+    
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var dateTimeTextField: UITextField!
+    
+    @IBOutlet weak var observationTitleTextField: UITextField!
+    @IBOutlet weak var observationDescriptionTextField: UITextField!
+    @IBOutlet weak var observationCategoryTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        usernameTextField.text = OTUserManager.currentUser().username
+        //dateTimeTextField.text = NSDate().
+    }
+    
+    @IBAction func makeObservationButtonPressed(sender: AnyObject) {
     }
 
-    @IBAction func makeObservationButtonPressed(sender: AnyObject) {
-        delegate?.shouldShowForm()
+    @IBAction func saveForLaterButtonPressed(sender: AnyObject) {
     }
 
 }

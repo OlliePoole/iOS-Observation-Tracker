@@ -10,64 +10,102 @@ import Foundation
 
 class OTNetworkInterface {
     
+    /// The base url of the web service
     static let baseURL = "http://sots.brookes.ac.uk/~p0073862/services/obs"
     
+    /// The shared url session manager that handles requests
+    static let session = NSURLSession.sharedSession()
+    
+    
+    /**
+     Sends a request to sign a new user up
+     
+     - parameter username:   The username to use
+     - parameter fullname:   The fullname to use
+     - parameter completion: The completion handler to call when the request is completed
+     */
     static func signUpWithUsername(username : String, andFullName fullname: String, withCompletionHandler completion : (success : Bool) -> Void) {
         
         let request = requestBuilderWithEndPoint("/register", httpMethod: "POST")
         
         var params : Dictionary<String, String> = Dictionary()
-            
+        
         params["username"] = username
         params["name"] = fullname
         
         let httpBody = encodedHTTPBodyWithParams(params)
         
-        let session = NSURLSession.sharedSession()
+        // Send the request
+        uploadTaskWithRequest(request, httpBody: httpBody, completion: completion)
+    }
+    
+    /**
+     Makes an observation
+     
+     - parameter observation: The observation to make
+     - parameter completion:  The completion handler to call on completion
+     */
+    static func makeObservationWithObservation(observation : OTObservation, withCompletionHandler completion : (success : Bool) -> Void) {
+        let request = requestBuilderWithEndPoint("/observations", httpMethod: "POST")
         
-        let sessionTask = session.uploadTaskWithRequest(request, fromData: httpBody) { (data, response, error) -> Void in
-            let httpURLResponse = response as! NSHTTPURLResponse
-            
-            if httpURLResponse.statusCode == 200 {
-                // Request was successful
-                completion(success: true)
-            }
-            else {
-                // Request unsuccessful
-                completion(success: false)
-            }
-        }
+        //TODO: Sort params here
         
-        // Start the task
-        sessionTask.resume()
+        uploadTaskWithRequest(request, httpBody: NSData(), completion: completion)
     }
     
     
-    private static func requestBuilderWithEndPoint(endpoint: String, httpMethod: String) -> NSMutableURLRequest {
-        let url = NSURL(string: baseURL + endpoint)
-        let request = NSMutableURLRequest(URL: url!)
+    /**
+     Fetches all the observations
+     
+     - parameter completion: The completion handler called when the request is completed
+     */
+    static func fetchAllObservationsWithCompletionHandler(completion : (success : Bool, results : Array<OTObservation>?) -> Void) {
+        let request = requestBuilderWithEndPoint("/observations", httpMethod: "GET")
         
-        request.HTTPMethod = httpMethod
-        
-        return request
+        dataTaskWithRequest(request, completion: completion)
     }
     
     
-    private static func encodedHTTPBodyWithParams(params: Dictionary<String, String>) -> NSData {
+    /**
+     Fetches all the observations made by a specific user
+     
+     - parameter username:   The username of the user to search for
+     - parameter completion: The completion handler
+     */
+    static func fetchObservationsMadeByUserWithUsername(username : String, completion : (success : Bool, results : Array<OTObservation>?) -> Void) {
+        let request = requestBuilderWithEndPoint("/observations/user/\(username)", httpMethod: "GET")
         
-        var requestBody = ""
-        var paramCount = 0
+        dataTaskWithRequest(request, completion: completion)
+    }
+    
+    
+    /**
+     Fetches all the observations made after the date specified
+     
+     - parameter date:       The unformatted NSDate
+     - parameter completion: The completion handler
+     */
+    static func fetchObservationsSince(date : NSDate, completion : (success : Bool, results : Array<OTObservation>?) -> Void) {
+        //TODO: Format the date/time string here
+        let request = requestBuilderWithEndPoint("/observations/since/datetime", httpMethod: "GET")
         
-        for (key, value) in params {
-            requestBody += key + "=" + value
-            
-            paramCount++
-            
-            if paramCount < params.count {
-                requestBody += "&"
-            }
-        }
+        dataTaskWithRequest(request, completion: completion)
+    }
+    
+    
+    /**
+     Fetches all the observations tagged with a specific category
+     
+     - parameter category:   The category to search for
+     - parameter completion: The completion handler
+     */
+    static func fetchObservationsForCategory(category : NSString, completion : (success : Bool, results : Array<OTObservation>?) -> Void) {
+        let request = requestBuilderWithEndPoint("/observations/category/\(category)", httpMethod: "GET")
         
-        return requestBody.dataUsingEncoding(NSUTF8StringEncoding)!
+        dataTaskWithRequest(request, completion: completion)
     }
 }
+
+
+
+
