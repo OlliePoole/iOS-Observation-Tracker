@@ -31,6 +31,7 @@ extension OTNetworkInterface {
         return request
     }
     
+    
     /**
      Encodes the parameters of a request to
      
@@ -98,8 +99,17 @@ extension OTNetworkInterface {
             if httpURLResponse.statusCode == 200 {
                 // Request was successful
                 
-                //TODO: Parse the results here.
-                completion(success: true, results: Array())
+                // parse the response
+                let xmlParser = OTXMLParser()
+                let elements = xmlParser.parseXML(data!)
+                
+                var observations = Array<OTObservation>()
+                
+                for observation in (elements?.subElements)! {
+                    observations.append(OTObservation(xmlData: observation))
+                }
+                
+                completion(success: true, results: observations)
             }
             else {
                 // Request unsuccessful

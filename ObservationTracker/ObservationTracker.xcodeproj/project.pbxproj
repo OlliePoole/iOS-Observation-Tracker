@@ -12,6 +12,8 @@
 		6B1DE6E61BE66018000ED18F /* OTSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1DE6E51BE66018000ED18F /* OTSignUpViewController.swift */; };
 		6B80EB581BF9DB37008EFE31 /* OTNetworkInterface+RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B80EB571BF9DB37008EFE31 /* OTNetworkInterface+RequestBuilder.swift */; };
 		6B80EB5A1BF9DF96008EFE31 /* OTObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B80EB591BF9DF96008EFE31 /* OTObservation.swift */; };
+		6B80EB611BF9E8C1008EFE31 /* OTXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B80EB601BF9E8C1008EFE31 /* OTXMLElement.swift */; };
+		6B80EB631BF9EA6E008EFE31 /* OTXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B80EB621BF9EA6E008EFE31 /* OTXMLParser.swift */; };
 		6BA90A541BE68D0F001D8125 /* OTMakeObservationFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA90A531BE68D0F001D8125 /* OTMakeObservationFormTableViewController.swift */; };
 		6BD85CA51BE5477800C26C9F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD85CA41BE5477800C26C9F /* MapKit.framework */; };
 		6BD85CAB1BE54BDB00C26C9F /* OTViewObservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD85CAA1BE54BDB00C26C9F /* OTViewObservationViewController.swift */; };
@@ -34,6 +36,8 @@
 		6B1DE6E51BE66018000ED18F /* OTSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTSignUpViewController.swift; sourceTree = "<group>"; };
 		6B80EB571BF9DB37008EFE31 /* OTNetworkInterface+RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OTNetworkInterface+RequestBuilder.swift"; sourceTree = "<group>"; };
 		6B80EB591BF9DF96008EFE31 /* OTObservation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTObservation.swift; sourceTree = "<group>"; };
+		6B80EB601BF9E8C1008EFE31 /* OTXMLElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTXMLElement.swift; sourceTree = "<group>"; };
+		6B80EB621BF9EA6E008EFE31 /* OTXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTXMLParser.swift; sourceTree = "<group>"; };
 		6BA90A531BE68D0F001D8125 /* OTMakeObservationFormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTMakeObservationFormTableViewController.swift; sourceTree = "<group>"; };
 		6BD85CA41BE5477800C26C9F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6BD85CAA1BE54BDB00C26C9F /* OTViewObservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTViewObservationViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +75,15 @@
 				6B1DE6E51BE66018000ED18F /* OTSignUpViewController.swift */,
 			);
 			path = "Sign Up";
+			sourceTree = "<group>";
+		};
+		6B80EB5D1BF9E887008EFE31 /* XML Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				6B80EB601BF9E8C1008EFE31 /* OTXMLElement.swift */,
+				6B80EB621BF9EA6E008EFE31 /* OTXMLParser.swift */,
+			);
+			path = "XML Parsing";
 			sourceTree = "<group>";
 		};
 		6BD85CA61BE54BA300C26C9F /* View Observations */ = {
@@ -181,6 +194,7 @@
 		6BF1E3201BE544C000FA5D15 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				6B80EB5D1BF9E887008EFE31 /* XML Parsing */,
 				6B1550F51BF5EF9E00CF50FB /* OTUserManager.swift */,
 				6BF1E3211BE544D600FA5D15 /* OTNetworkInterface.swift */,
 				6B80EB571BF9DB37008EFE31 /* OTNetworkInterface+RequestBuilder.swift */,
@@ -271,10 +285,12 @@
 				6B80EB5A1BF9DF96008EFE31 /* OTObservation.swift in Sources */,
 				6BF44D271BF8D1800030FE32 /* OTMakeObservationViewController.swift in Sources */,
 				6B1550F81BF5F1B700CF50FB /* OTUser.swift in Sources */,
+				6B80EB611BF9E8C1008EFE31 /* OTXMLElement.swift in Sources */,
 				6BF44D251BF8C3A60030FE32 /* OTWelcomeViewController.swift in Sources */,
 				6B1550F61BF5EF9E00CF50FB /* OTUserManager.swift in Sources */,
 				6B1DE6E61BE66018000ED18F /* OTSignUpViewController.swift in Sources */,
 				6B80EB581BF9DB37008EFE31 /* OTNetworkInterface+RequestBuilder.swift in Sources */,
+				6B80EB631BF9EA6E008EFE31 /* OTXMLParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

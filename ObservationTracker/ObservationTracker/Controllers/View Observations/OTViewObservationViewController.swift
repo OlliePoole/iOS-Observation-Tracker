@@ -17,6 +17,14 @@ class OTViewObservationViewController: UIViewController {
     
     var refineSearchToggled = false
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        OTNetworkInterface.fetchAllObservationsWithCompletionHandler { (success, results) -> Void in
+            print(results)
+        }
+    }
+    
     @IBAction func segmentControlValueChanged(sender: AnyObject) {
         // Toggle the views
         mapViewControllerContainerView.hidden = !mapViewControllerContainerView.hidden
