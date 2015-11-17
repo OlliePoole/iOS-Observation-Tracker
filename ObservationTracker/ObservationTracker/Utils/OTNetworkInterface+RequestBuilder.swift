@@ -105,8 +105,12 @@ extension OTNetworkInterface {
                 
                 var observations = Array<OTObservation>()
                 
-                for observation in (elements?.subElements)! {
-                    observations.append(OTObservation(xmlData: observation))
+                // Check to see if any observations were returned
+                if let subElements = elements?.subElements {
+                    
+                    for observation in subElements {
+                        observations.append(OTObservation(xmlData: observation))
+                    }
                 }
                 
                 completion(success: true, results: observations)

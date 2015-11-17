@@ -26,21 +26,6 @@ class OTMakeObservationViewController: UIViewController {
         }
     }
 
-    @IBAction func makeObservationButtonPressed(sender: AnyObject) {
-        if formIsVisable {
-            // hide form
-        }
-        else {
-            // show form
-            self.makeObservationButtonLabel.hidden = true
-            self.makeObservationButton.hidden = true
-            self.makeObservationImageView.hidden = true
-            
-            UIView.animateWithDuration(0.5, animations: { () -> Void in
-                self.formTableViewContainerView.frame.origin.y = self.SCREEN_TOP
-            })
-            
-        }
-    }
+    
 
 }

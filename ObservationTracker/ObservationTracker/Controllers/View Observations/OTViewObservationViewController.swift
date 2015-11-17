@@ -15,15 +15,71 @@ class OTViewObservationViewController: UIViewController {
     @IBOutlet weak var tableViewControllerContainerView: UIView!
     @IBOutlet weak var refineSearchControllerContainerView: UIView!
     
+    // Child view controllers
+    var mapViewController : OTViewObservationMapViewController!
+    var listViewTableViewController : OTViewObservationsTableViewController!
+    var refineSearchTableViewController : OTRefineSearchTableViewController!
+    
     var refineSearchToggled = false
+    
+    var observationsDatasource : Array<OTObservation>! = Array()
+    
+    /// A single completion handler for all network requests for the view controller
+    var requestCompletionHandler : ((success : Bool, results : Array<OTObservation>?) -> Void)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        OTNetworkInterface.fetchAllObservationsWithCompletionHandler { (success, results) -> Void in
-            print(results)
+        // Set the delegate of the refine search view
+        refineSearchTableViewController.delegate = self
+        
+        /**
+        *  For every network request the view controller sends the completion handler
+        *  is the same. So to avoid duplicating code, it's defined here.
+        */
+        requestCompletionHandler = { (success : Bool, results : Array<OTObservation>?) -> Void in
+            if success {
+                self.observationsDatasource = results
+                
+                self.mapViewController.refreshData()
+                self.listViewTableViewController.refreshData()
+            }
+            else {
+                let alertController = UIAlertController(title: "Error", message: "Something isn't quite right, check the search again", preferredStyle: .Alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                
+                // Ask the main thread to display the alert
+                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+        
+        // Load the first set of observations
+        OTNetworkInterface.fetchAllObservationsWithCompletionHandler(requestCompletionHandler)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        switch segue.identifier! {
+            
+            case "OTViewObservationMapViewController":
+                mapViewController = segue.destinationViewController as! OTViewObservationMapViewController
+                
+            case "OTViewObservationsTableViewController":
+                listViewTableViewController = segue.destinationViewController as! OTViewObservationsTableViewController
+                
+            case "OTRefineSearchTableViewController":
+                refineSearchTableViewController = segue.destinationViewController as! OTRefineSearchTableViewController
+                
+            default:
+                ()
         }
     }
+}
+
+// MARK: - UI Interactions
+extension OTViewObservationViewController {
     
     @IBAction func segmentControlValueChanged(sender: AnyObject) {
         // Toggle the views
@@ -32,6 +88,15 @@ class OTViewObservationViewController: UIViewController {
     }
     
     @IBAction func refineSearchButtonClicked(sender: AnyObject) {
+        toggleRefineSearchViewController()
+    }
+    
+    
+    /**
+     Based on the current state of the search controller,
+     the method either shows it or hides it.
+     */
+    func toggleRefineSearchViewController() {
         if refineSearchToggled {
             // Hide the view
             UIView.animateWithDuration(0.5, animations: { () -> Void in
@@ -44,11 +109,40 @@ class OTViewObservationViewController: UIViewController {
         else {
             // Show the view
             UIView.animateWithDuration(0.5, animations: { () -> Void in
-                self.refineSearchControllerContainerView.frame.origin.y = 0
+                self.refineSearchControllerContainerView.frame.origin.y = 40
                 },
                 completion: { (completed) -> Void in
                     self.refineSearchToggled = true
             })
         }
+    }
+}
+
+
+// MARK: - OTRefineSearchDelegate
+extension OTViewObservationViewController : OTRefineSearchDelegate {
+    
+    func showAllObservations() {
+        toggleRefineSearchViewController()
+        
+        OTNetworkInterface.fetchAllObservationsWithCompletionHandler(requestCompletionHandler)
+    }
+    
+    func refineSearch(sender: OTRefineSearchTableViewController, observationsWithUsername username: String) {
+        toggleRefineSearchViewController()
+        
+        OTNetworkInterface.fetchObservationsMadeByUserWithUsername(username, completion: requestCompletionHandler)
+    }
+    
+    func refineSearch(sender : OTRefineSearchTableViewController, observationsWithCategory category: String) {
+        toggleRefineSearchViewController()
+        
+        OTNetworkInterface.fetchObservationsForCategory(category, completion: requestCompletionHandler)
+    }
+    
+    func refineSearch(sender: OTRefineSearchTableViewController, observationsWithDateTime dateTime: NSDate) {
+        toggleRefineSearchViewController()
+        
+        OTNetworkInterface.fetchObservationsSince(dateTime, completion: requestCompletionHandler)
     }
 }
