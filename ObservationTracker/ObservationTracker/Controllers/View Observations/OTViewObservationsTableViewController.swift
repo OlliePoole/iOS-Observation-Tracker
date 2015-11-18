@@ -12,7 +12,7 @@ import QuartzCore
 
 class OTViewObservationsTableViewController: UITableViewController {
 
-    var observations : Array<OTObservation> {
+    var observations : Array<OTObservationProtocol> {
         get {
             let parent = parentViewController as! OTViewObservationViewController!
             return parent.observationsDatasource

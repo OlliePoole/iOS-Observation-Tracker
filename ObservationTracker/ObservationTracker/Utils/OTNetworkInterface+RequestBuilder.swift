@@ -22,7 +22,7 @@ extension OTNetworkInterface {
      
      - returns: The formatted request
      */
-    class func requestBuilderWithEndPoint(endpoint: String, httpMethod: String) -> NSMutableURLRequest {
+    class func requestBuilder(endpoint endpoint: String, httpMethod: String) -> NSMutableURLRequest {
         let url = NSURL(string: baseURL + endpoint)
         let request = NSMutableURLRequest(URL: url!)
         
@@ -39,7 +39,7 @@ extension OTNetworkInterface {
      
      - returns: The HTTP Body in data form to be added to the request
      */
-    class func encodedHTTPBodyWithParams(params: Dictionary<String, String>) -> NSData {
+    class func encodedHTTPBody(params: Dictionary<String, String>) -> NSData {
         
         var requestBody = ""
         var paramCount = 0
@@ -65,7 +65,7 @@ extension OTNetworkInterface {
      - parameter httpBody:   The body of the request (params)
      - parameter completion: The completion handler to call on completion
      */
-    class func uploadTaskWithRequest(request : NSURLRequest, httpBody : NSData, completion : (success : Bool) -> Void) {
+    class func uploadTask(request : NSURLRequest, httpBody : NSData, completion : (success : Bool) -> Void) {
         
         let sessionTask = session.uploadTaskWithRequest(request, fromData: httpBody) { (data, response, error) -> Void in
             let httpURLResponse = response as! NSHTTPURLResponse
@@ -91,7 +91,7 @@ extension OTNetworkInterface {
      - parameter request:    The request to exectute
      - parameter completion: The completion handler to call on completion
      */
-    class func dataTaskWithRequest(request : NSURLRequest, completion : (success: Bool, results : Array<OTObservation>?) -> Void) {
+    class func dataTask(request : NSURLRequest, completion : (success: Bool, results : Array<OTObservationProtocol>?) -> Void) {
         
         let sessionTask = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             let httpURLResponse = response as! NSHTTPURLResponse
@@ -103,7 +103,7 @@ extension OTNetworkInterface {
                 let xmlParser = OTXMLParser()
                 let elements = xmlParser.parseXML(data!)
                 
-                var observations = Array<OTObservation>()
+                var observations = Array<OTObservationProtocol>()
                 
                 // Check to see if any observations were returned
                 if let subElements = elements?.subElements {

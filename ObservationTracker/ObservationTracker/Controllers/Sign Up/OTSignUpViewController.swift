@@ -11,7 +11,7 @@ import UIKit
 class OTSignUpViewController: UIViewController {
     
     enum TextFieldTags : Int {
-        case kUsernameTextField = 0, kFullnameTextField = 1
+        case kUsernameTextField, kFullnameTextField
     }
     
     @IBOutlet weak var startTrackingButton: UIButton!
@@ -39,15 +39,13 @@ class OTSignUpViewController: UIViewController {
         
     }
     
-    func hideKeyboard() {
-        view.endEditing(true)
-    }
+    func hideKeyboard() { view.endEditing(true) }
     
     @IBAction func startTrackingButtonPressed(sender: AnyObject) {
         
         let user = OTUser(username: usernameTextField.text!, fullName: fullNameTextField.text!)
         
-        OTNetworkInterface.signUpWithUsername(user.username!, andFullName: user.fullName!) { (success) -> Void in
+        OTNetworkInterface.signUp(user.username!, andFullName: user.fullName!) { (success) -> Void in
             
             if success {
                 // Login was successful - save the new user
@@ -57,7 +55,6 @@ class OTSignUpViewController: UIViewController {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.dismissViewControllerAnimated(true, completion: nil)
                 })
-                
             }
             else {
                 

@@ -9,15 +9,22 @@
 import UIKit
 import MapKit
 
-class OTObservation: NSObject {
+enum ValidateObjectErrorCode {
+    case username, location, dateTime, title, description, category
+}
+
+/// A non-managed implementation of OTObservationProtocol
+struct OTObservation : OTObservationProtocol {
     
-    var username : String!
-    var location : CLLocationCoordinate2D!
-    var dateTime : NSDate!
+    var username : String?
+    var location : CLLocationCoordinate2D?
+    var dateTime : NSDate?
     
-    var obsTitle : String!
-    var obsDescription : String!
-    var obsCategory : String!
+    var obsTitle : String?
+    var obsDescription : String?
+    var obsCategory : String?
+    
+    init() {}
     
     init(username : String, location : CLLocationCoordinate2D, dateTime : NSDate, obsTitle : String, obsDescription : String, obsCategory : String) {
         
@@ -98,4 +105,5 @@ class OTObservation: NSObject {
         }
         self.location = CLLocationCoordinate2DMake(latitude, longtitude)
     }
+    
 }

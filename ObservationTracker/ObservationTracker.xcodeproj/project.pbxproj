@@ -10,10 +10,16 @@
 		6B1550F61BF5EF9E00CF50FB /* OTUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1550F51BF5EF9E00CF50FB /* OTUserManager.swift */; };
 		6B1550F81BF5F1B700CF50FB /* OTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1550F71BF5F1B700CF50FB /* OTUser.swift */; };
 		6B1DE6E61BE66018000ED18F /* OTSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1DE6E51BE66018000ED18F /* OTSignUpViewController.swift */; };
+		6B39D2791BFC76620069EACD /* OTCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B39D2781BFC76620069EACD /* OTCoreDataManager.swift */; };
+		6B39D27B1BFC7BA50069EACD /* OTObservationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B39D27A1BFC7BA50069EACD /* OTObservationProtocol.swift */; };
+		6B39D27F1BFC7DDD0069EACD /* ManagedObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B39D27D1BFC7DDD0069EACD /* ManagedObservation.swift */; };
+		6B39D2811BFC88250069EACD /* OTSuccessHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B39D2801BFC88250069EACD /* OTSuccessHUD.swift */; };
+		6B39D2841BFC97800069EACD /* OTSavedObservationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B39D2831BFC97800069EACD /* OTSavedObservationsViewController.swift */; };
 		6B80EB581BF9DB37008EFE31 /* OTNetworkInterface+RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B80EB571BF9DB37008EFE31 /* OTNetworkInterface+RequestBuilder.swift */; };
 		6B80EB5A1BF9DF96008EFE31 /* OTObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B80EB591BF9DF96008EFE31 /* OTObservation.swift */; };
 		6B80EB611BF9E8C1008EFE31 /* OTXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B80EB601BF9E8C1008EFE31 /* OTXMLElement.swift */; };
 		6B80EB631BF9EA6E008EFE31 /* OTXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B80EB621BF9EA6E008EFE31 /* OTXMLParser.swift */; };
+		6B9486EA1BFB48FF00D23870 /* OTUserLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9486E91BFB48FF00D23870 /* OTUserLocationManager.swift */; };
 		6BA90A541BE68D0F001D8125 /* OTMakeObservationFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA90A531BE68D0F001D8125 /* OTMakeObservationFormTableViewController.swift */; };
 		6BD85CA51BE5477800C26C9F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD85CA41BE5477800C26C9F /* MapKit.framework */; };
 		6BD85CAB1BE54BDB00C26C9F /* OTViewObservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD85CAA1BE54BDB00C26C9F /* OTViewObservationViewController.swift */; };
@@ -27,8 +33,9 @@
 		6BF1E31F1BE53E3B00FA5D15 /* ObservationTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BF1E31D1BE53E3B00FA5D15 /* ObservationTracker.xcdatamodeld */; };
 		6BF1E3221BE544D600FA5D15 /* OTNetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF1E3211BE544D600FA5D15 /* OTNetworkInterface.swift */; };
 		6BF44D251BF8C3A60030FE32 /* OTWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF44D241BF8C3A60030FE32 /* OTWelcomeViewController.swift */; };
-		6BF44D271BF8D1800030FE32 /* OTMakeObservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF44D261BF8D1800030FE32 /* OTMakeObservationViewController.swift */; };
-		6BFAAE671BFA33D9008ADC85 /* OTDateFormattingExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAAE661BFA33D9008ADC85 /* OTDateFormattingExtentions.swift */; };
+		6BF56AF31BFB759A00B16426 /* OTTextFieldExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF56AF21BFB759A00B16426 /* OTTextFieldExtentions.swift */; };
+		6BF56AF51BFB8E9A00B16426 /* OTNetworkInterfaceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF56AF41BFB8E9A00B16426 /* OTNetworkInterfaceProtocol.swift */; };
+		6BFAAE671BFA33D9008ADC85 /* OTClassExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAAE661BFA33D9008ADC85 /* OTClassExtentions.swift */; };
 		6BFAAE691BFA3AB6008ADC85 /* OTMapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAAE681BFA3AB6008ADC85 /* OTMapMarker.swift */; };
 		6BFAAE6B1BFA3D8F008ADC85 /* OTObservationDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAAE6A1BFA3D8F008ADC85 /* OTObservationDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -37,10 +44,16 @@
 		6B1550F51BF5EF9E00CF50FB /* OTUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTUserManager.swift; sourceTree = "<group>"; };
 		6B1550F71BF5F1B700CF50FB /* OTUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTUser.swift; sourceTree = "<group>"; };
 		6B1DE6E51BE66018000ED18F /* OTSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTSignUpViewController.swift; sourceTree = "<group>"; };
+		6B39D2781BFC76620069EACD /* OTCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTCoreDataManager.swift; sourceTree = "<group>"; };
+		6B39D27A1BFC7BA50069EACD /* OTObservationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTObservationProtocol.swift; sourceTree = "<group>"; };
+		6B39D27D1BFC7DDD0069EACD /* ManagedObservation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObservation.swift; sourceTree = "<group>"; };
+		6B39D2801BFC88250069EACD /* OTSuccessHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTSuccessHUD.swift; sourceTree = "<group>"; };
+		6B39D2831BFC97800069EACD /* OTSavedObservationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTSavedObservationsViewController.swift; path = "Saved Observations/OTSavedObservationsViewController.swift"; sourceTree = "<group>"; };
 		6B80EB571BF9DB37008EFE31 /* OTNetworkInterface+RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OTNetworkInterface+RequestBuilder.swift"; sourceTree = "<group>"; };
 		6B80EB591BF9DF96008EFE31 /* OTObservation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTObservation.swift; sourceTree = "<group>"; };
 		6B80EB601BF9E8C1008EFE31 /* OTXMLElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTXMLElement.swift; sourceTree = "<group>"; };
 		6B80EB621BF9EA6E008EFE31 /* OTXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTXMLParser.swift; sourceTree = "<group>"; };
+		6B9486E91BFB48FF00D23870 /* OTUserLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTUserLocationManager.swift; sourceTree = "<group>"; };
 		6BA90A531BE68D0F001D8125 /* OTMakeObservationFormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTMakeObservationFormTableViewController.swift; sourceTree = "<group>"; };
 		6BD85CA41BE5477800C26C9F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6BD85CAA1BE54BDB00C26C9F /* OTViewObservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTViewObservationViewController.swift; sourceTree = "<group>"; };
@@ -56,8 +69,9 @@
 		6BF1E31E1BE53E3B00FA5D15 /* ObservationTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ObservationTracker.xcdatamodel; sourceTree = "<group>"; };
 		6BF1E3211BE544D600FA5D15 /* OTNetworkInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTNetworkInterface.swift; sourceTree = "<group>"; };
 		6BF44D241BF8C3A60030FE32 /* OTWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTWelcomeViewController.swift; sourceTree = "<group>"; };
-		6BF44D261BF8D1800030FE32 /* OTMakeObservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTMakeObservationViewController.swift; sourceTree = "<group>"; };
-		6BFAAE661BFA33D9008ADC85 /* OTDateFormattingExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTDateFormattingExtentions.swift; sourceTree = "<group>"; };
+		6BF56AF21BFB759A00B16426 /* OTTextFieldExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTTextFieldExtentions.swift; path = "Class Extentions/OTTextFieldExtentions.swift"; sourceTree = "<group>"; };
+		6BF56AF41BFB8E9A00B16426 /* OTNetworkInterfaceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTNetworkInterfaceProtocol.swift; sourceTree = "<group>"; };
+		6BFAAE661BFA33D9008ADC85 /* OTClassExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTClassExtentions.swift; sourceTree = "<group>"; };
 		6BFAAE681BFA3AB6008ADC85 /* OTMapMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTMapMarker.swift; sourceTree = "<group>"; };
 		6BFAAE6A1BFA3D8F008ADC85 /* OTObservationDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTObservationDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +95,14 @@
 				6B1DE6E51BE66018000ED18F /* OTSignUpViewController.swift */,
 			);
 			path = "Sign Up";
+			sourceTree = "<group>";
+		};
+		6B39D2821BFC97610069EACD /* Saved Observations */ = {
+			isa = PBXGroup;
+			children = (
+				6B39D2831BFC97800069EACD /* OTSavedObservationsViewController.swift */,
+			);
+			name = "Saved Observations";
 			sourceTree = "<group>";
 		};
 		6B80EB5D1BF9E887008EFE31 /* XML Parsing */ = {
@@ -108,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				6BA90A531BE68D0F001D8125 /* OTMakeObservationFormTableViewController.swift */,
-				6BF44D261BF8D1800030FE32 /* OTMakeObservationViewController.swift */,
 			);
 			path = "Make Observation";
 			sourceTree = "<group>";
@@ -148,6 +169,7 @@
 				6B1DE6E21BE65FF7000ED18F /* Sign Up */,
 				6BD85CA71BE54BAB00C26C9F /* Make Observation */,
 				6BD85CA61BE54BA300C26C9F /* View Observations */,
+				6B39D2821BFC97610069EACD /* Saved Observations */,
 				6BF1E31C1BE53D5E00FA5D15 /* Base.iproj */,
 				6BF1E3061BE53CC600FA5D15 /* Main.storyboard */,
 				6BF1E30E1BE53CC600FA5D15 /* LaunchScreen.storyboard */,
@@ -159,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				6BFAAE681BFA3AB6008ADC85 /* OTMapMarker.swift */,
+				6B39D2801BFC88250069EACD /* OTSuccessHUD.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,6 +189,8 @@
 		6BF1E3191BE53D3100FA5D15 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6B39D27A1BFC7BA50069EACD /* OTObservationProtocol.swift */,
+				6B39D27D1BFC7DDD0069EACD /* ManagedObservation.swift */,
 				6BF1E31D1BE53E3B00FA5D15 /* ObservationTracker.xcdatamodeld */,
 				6B1550F71BF5F1B700CF50FB /* OTUser.swift */,
 				6B80EB591BF9DF96008EFE31 /* OTObservation.swift */,
@@ -202,13 +227,33 @@
 		6BF1E3201BE544C000FA5D15 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				6BF56AF61BFB8EE900B16426 /* Network Operations */,
+				6BF56AF11BFB757A00B16426 /* Class Extentions */,
 				6B80EB5D1BF9E887008EFE31 /* XML Parsing */,
 				6B1550F51BF5EF9E00CF50FB /* OTUserManager.swift */,
-				6BF1E3211BE544D600FA5D15 /* OTNetworkInterface.swift */,
-				6B80EB571BF9DB37008EFE31 /* OTNetworkInterface+RequestBuilder.swift */,
-				6BFAAE661BFA33D9008ADC85 /* OTDateFormattingExtentions.swift */,
+				6B9486E91BFB48FF00D23870 /* OTUserLocationManager.swift */,
+				6B39D2781BFC76620069EACD /* OTCoreDataManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		6BF56AF11BFB757A00B16426 /* Class Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				6BFAAE661BFA33D9008ADC85 /* OTClassExtentions.swift */,
+				6BF56AF21BFB759A00B16426 /* OTTextFieldExtentions.swift */,
+			);
+			name = "Class Extentions";
+			sourceTree = "<group>";
+		};
+		6BF56AF61BFB8EE900B16426 /* Network Operations */ = {
+			isa = PBXGroup;
+			children = (
+				6BF56AF41BFB8E9A00B16426 /* OTNetworkInterfaceProtocol.swift */,
+				6BF1E3211BE544D600FA5D15 /* OTNetworkInterface.swift */,
+				6B80EB571BF9DB37008EFE31 /* OTNetworkInterface+RequestBuilder.swift */,
+			);
+			name = "Network Operations";
 			sourceTree = "<group>";
 		};
 		6BFAAE621BFA2BBA008ADC85 /* ListViewController */ = {
@@ -299,26 +344,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BF56AF51BFB8E9A00B16426 /* OTNetworkInterfaceProtocol.swift in Sources */,
 				6BFAAE6B1BFA3D8F008ADC85 /* OTObservationDetailTableViewController.swift in Sources */,
+				6B39D2811BFC88250069EACD /* OTSuccessHUD.swift in Sources */,
 				6BF1E3031BE53CC600FA5D15 /* AppDelegate.swift in Sources */,
-				6BFAAE671BFA33D9008ADC85 /* OTDateFormattingExtentions.swift in Sources */,
+				6BFAAE671BFA33D9008ADC85 /* OTClassExtentions.swift in Sources */,
 				6BD85CAB1BE54BDB00C26C9F /* OTViewObservationViewController.swift in Sources */,
+				6B39D2791BFC76620069EACD /* OTCoreDataManager.swift in Sources */,
 				6BD85CAD1BE54BF400C26C9F /* OTViewObservationsTableViewController.swift in Sources */,
 				6BF1E31F1BE53E3B00FA5D15 /* ObservationTracker.xcdatamodeld in Sources */,
 				6BA90A541BE68D0F001D8125 /* OTMakeObservationFormTableViewController.swift in Sources */,
 				6BD85CB11BE54C3800C26C9F /* OTRefineSearchTableViewController.swift in Sources */,
+				6B9486EA1BFB48FF00D23870 /* OTUserLocationManager.swift in Sources */,
 				6BD85CAF1BE54C0700C26C9F /* OTViewObservationMapViewController.swift in Sources */,
 				6BF1E3221BE544D600FA5D15 /* OTNetworkInterface.swift in Sources */,
 				6B80EB5A1BF9DF96008EFE31 /* OTObservation.swift in Sources */,
-				6BF44D271BF8D1800030FE32 /* OTMakeObservationViewController.swift in Sources */,
 				6B1550F81BF5F1B700CF50FB /* OTUser.swift in Sources */,
 				6B80EB611BF9E8C1008EFE31 /* OTXMLElement.swift in Sources */,
+				6B39D2841BFC97800069EACD /* OTSavedObservationsViewController.swift in Sources */,
 				6BFAAE691BFA3AB6008ADC85 /* OTMapMarker.swift in Sources */,
 				6BF44D251BF8C3A60030FE32 /* OTWelcomeViewController.swift in Sources */,
 				6B1550F61BF5EF9E00CF50FB /* OTUserManager.swift in Sources */,
 				6B1DE6E61BE66018000ED18F /* OTSignUpViewController.swift in Sources */,
 				6B80EB581BF9DB37008EFE31 /* OTNetworkInterface+RequestBuilder.swift in Sources */,
+				6B39D27F1BFC7DDD0069EACD /* ManagedObservation.swift in Sources */,
+				6BF56AF31BFB759A00B16426 /* OTTextFieldExtentions.swift in Sources */,
 				6B80EB631BF9EA6E008EFE31 /* OTXMLParser.swift in Sources */,
+				6B39D27B1BFC7BA50069EACD /* OTObservationProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +483,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/ObservationTracker/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -443,6 +496,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/ObservationTracker/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

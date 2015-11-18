@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OTUser: NSObject {
+struct OTUser {
 
     var username : String?
     var fullName : String?

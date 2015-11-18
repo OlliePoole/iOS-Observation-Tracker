@@ -48,5 +48,16 @@ class OTRefineSearchTableViewController: UITableViewController {
     }
 
     @IBAction func searchByDateButtonClicked(sender: AnyObject) {
+        let date = datePicker.date
+        let time = timePicker.date
+        let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        
+        let hour = cal.component(.Hour, fromDate: time)
+        let minute = cal.component(.Minute, fromDate: time)
+        
+        cal.dateBySettingUnit(.Hour, value: hour, ofDate: date, options: .MatchFirst)
+        cal.dateBySettingUnit(.Minute, value: minute, ofDate: date, options: .MatchFirst)
+        
+        delegate?.refineSearch(self, observationsWithDateTime: date)
     }
 }

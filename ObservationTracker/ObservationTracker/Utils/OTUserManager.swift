@@ -9,7 +9,7 @@
 import UIKit
 
 /// A static class responsible for managing the currently signed in user
-class OTUserManager: NSObject {
+class OTUserManager {
     
     enum UserDefaultKeys : String {
         case Username = "username"

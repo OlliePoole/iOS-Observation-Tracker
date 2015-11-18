@@ -22,10 +22,10 @@ class OTViewObservationViewController: UIViewController {
     
     var refineSearchToggled = false
     
-    var observationsDatasource : Array<OTObservation>! = Array()
+    var observationsDatasource : Array<OTObservationProtocol>! = Array()
     
     /// A single completion handler for all network requests for the view controller
-    var requestCompletionHandler : ((success : Bool, results : Array<OTObservation>?) -> Void)!
+    var requestCompletionHandler : ((success : Bool, results : Array<OTObservationProtocol>?) -> Void)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class OTViewObservationViewController: UIViewController {
         *  For every network request the view controller sends the completion handler
         *  is the same. So to avoid duplicating code, it's defined here.
         */
-        requestCompletionHandler = { (success : Bool, results : Array<OTObservation>?) -> Void in
+        requestCompletionHandler = { (success : Bool, results : Array<OTObservationProtocol>?) -> Void in
             if success {
                 self.observationsDatasource = results
                 
@@ -56,7 +56,7 @@ class OTViewObservationViewController: UIViewController {
         }
         
         // Load the first set of observations
-        OTNetworkInterface.fetchAllObservationsWithCompletionHandler(requestCompletionHandler)
+        OTNetworkInterface.fetchObservations(requestCompletionHandler)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -125,24 +125,24 @@ extension OTViewObservationViewController : OTRefineSearchDelegate {
     func showAllObservations() {
         toggleRefineSearchViewController()
         
-        OTNetworkInterface.fetchAllObservationsWithCompletionHandler(requestCompletionHandler)
+        OTNetworkInterface.fetchObservations(requestCompletionHandler)
     }
     
     func refineSearch(sender: OTRefineSearchTableViewController, observationsWithUsername username: String) {
         toggleRefineSearchViewController()
         
-        OTNetworkInterface.fetchObservationsMadeByUserWithUsername(username, completion: requestCompletionHandler)
+        OTNetworkInterface.fetchObservations(madeByUser: username, completion: requestCompletionHandler)
     }
     
     func refineSearch(sender : OTRefineSearchTableViewController, observationsWithCategory category: String) {
         toggleRefineSearchViewController()
         
-        OTNetworkInterface.fetchObservationsForCategory(category, completion: requestCompletionHandler)
+        OTNetworkInterface.fetchObservations(matchingCategory: category, completion: requestCompletionHandler)
     }
     
     func refineSearch(sender: OTRefineSearchTableViewController, observationsWithDateTime dateTime: NSDate) {
         toggleRefineSearchViewController()
         
-        OTNetworkInterface.fetchObservationsSince(dateTime, completion: requestCompletionHandler)
+        OTNetworkInterface.fetchObservations(since: dateTime, completion: requestCompletionHandler)
     }
 }

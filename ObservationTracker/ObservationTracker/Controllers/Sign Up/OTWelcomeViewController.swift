@@ -18,7 +18,7 @@ class OTWelcomeViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewDidAppear(animated)
-
+        
         // Check to see if there is a user signed in
         if OTUserManager.hasUserAlreadySignedIn() {
             

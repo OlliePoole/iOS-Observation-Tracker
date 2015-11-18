@@ -16,7 +16,7 @@ class OTViewObservationMapViewController: UIViewController {
     /// The map markers
     var markers = Array<OTMapMarker>()
     
-    var observations : Array<OTObservation> {
+    var observations : Array<OTObservationProtocol> {
         get {
             let parent = parentViewController as! OTViewObservationViewController!
             return parent.observationsDatasource
@@ -37,7 +37,7 @@ class OTViewObservationMapViewController: UIViewController {
         
         // Add a marker to the map for each observation
         for observation in observations {
-            let marker = OTMapMarker(title: observation.obsTitle, coordinate: observation.location, observation: observation)
+            let marker = OTMapMarker(title: observation.obsTitle!, coordinate: observation.location!, observation: observation)
             
             markers.append(marker)
         }

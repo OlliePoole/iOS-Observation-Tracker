@@ -19,7 +19,7 @@ class OTObservationDetailTableViewController: UITableViewController {
     @IBOutlet weak var observationDataTimeLabel: UILabel!
     @IBOutlet weak var observationMapView: MKMapView!
     
-    var observation : OTObservation!
+    var observation : OTObservationProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,27 +27,27 @@ class OTObservationDetailTableViewController: UITableViewController {
         navigationItem.title = observation.obsTitle
         
         // Set up labels
-        observationTitleLabel.text = "Title: \(observation.obsTitle)"
-        observationDescriptionLabel.text = "Description: \(observation.obsDescription)"
-        observationCategoryLabel.text = "Category: \(observation.obsCategory)"
+        observationTitleLabel.text = "Title: \(observation.obsTitle!)"
+        observationDescriptionLabel.text = "Description: \(observation.obsDescription!)"
+        observationCategoryLabel.text = "Category: \(observation.obsCategory!)"
         
-        observationUsernameLabel.text = "Username: \(observation.username)"
+        observationUsernameLabel.text = "Username: \(observation.username!)"
         
         if let dateTime = observation.dateTime {
-            observationDataTimeLabel.text = "Date/Time : \(dateTime.toString()!)"
+            observationDataTimeLabel.text = "Date/Time : \(dateTime.toString(.UserInterfaceOutput)!)"
         }
         
         
         // Add annotation to map view
         let annotation = MKPointAnnotation()
         annotation.title = observation.obsTitle
-        annotation.coordinate = observation.location
+        annotation.coordinate = observation.location!
         
         observationMapView.addAnnotation(annotation)
         
         // Set the camera
         let camera = MKMapCamera()
-        camera.centerCoordinate = observation.location
+        camera.centerCoordinate = observation.location!
         camera.altitude = 10000
         
         observationMapView.setCamera(camera, animated: true)

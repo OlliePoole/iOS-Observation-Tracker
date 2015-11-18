@@ -13,9 +13,9 @@ class OTMapMarker: NSObject, MKAnnotation {
 
     var title : String?
     var coordinate : CLLocationCoordinate2D
-    var observation : OTObservation?
+    var observation : OTObservationProtocol?
     
-    init(title : String, coordinate : CLLocationCoordinate2D, observation : OTObservation) {
+    init(title : String, coordinate : CLLocationCoordinate2D, observation : OTObservationProtocol) {
         self.title = title
         self.coordinate = coordinate
         self.observation = observation
